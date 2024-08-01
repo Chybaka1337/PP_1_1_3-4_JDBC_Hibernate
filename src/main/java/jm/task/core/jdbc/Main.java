@@ -1,12 +1,13 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceHibernateImpl;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         // реализуйте алгоритм здесь
-        UserService userService = new UserServiceImpl();
+        UserService userService = new UserServiceHibernateImpl();
         userService.createUsersTable();
         userService.saveUser("Зоммер", "Андрей", (byte) 22);
         userService.saveUser("Лев", "Толстой", (byte) 82);
